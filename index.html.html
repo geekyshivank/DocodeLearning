@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DoCode Learning Bootcamp | 5-Day Intensive Programming</title>
+  <meta name="description" content="Join DoCode Learning's 5-day hands-on programming bootcamp in Python, Web Development, or AI-ML. Early-bird price ₹349. Practical projects, expert instructors, community support." />
+  <meta name="keywords" content="programming bootcamp, Python bootcamp, Web development bootcamp, AI ML bootcamp, DoCode Learning, intensive bootcamp, coding bootcamp India" />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+  <style>
+:root {
+      --primary:#034bad;
+      --secondary:#5282c6;
+      --accent:#f0f4fa;
+      --radius:12px;
+      --shadow:0 15px 40px rgba(3,75,173,0.15);
+      --transition:0.25s cubic-bezier(.4,.2,.2,1);
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+      background:#f9fbfe;
+      color:#1f2d3a;
+      line-height:1.5;
+    }
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 18px;
+    }
+    header{
+      position:sticky;
+      top:0;
+      background:#fff;
+      z-index:100;
+      border-bottom:1px solid rgba(0,0,0,0.05);
+      padding:12px 0;
+      backdrop-filter:blur(6px);
+      box-shadow:0 4px 20px rgba(0,0,0,0.03);
+    }
+    .header-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      font-weight:700;
+    }
+    .logo-icon{
+      width:36px;
+      height:36px;
+      background:linear-gradient(135deg,var(--primary),var(--secondary));
+      border-radius:8px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      font-size:18px;
+      font-weight:700;
+    }
+    nav{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+    nav a{
+      text-decoration:none;
+      font-size:0.95rem;
+      font-weight:600;
+      color:#2c3e50;
+      position:relative;
+      padding:4px 0;
+    }
+    nav a::after{
+      content:'';
+      height:2px;
+      width:0;
+      background:var(--primary);
+      position:absolute;
+      left:0;
+      bottom:-2px;
+      transition:width var(--transition);
+    }
+    nav a:hover::after{
+      width:100%;
+    }
+    .btn{
+      background:linear-gradient(135deg,var(--primary),var(--secondary));
+      padding:12px 22px;
+      border:none;
+      border-radius:10px;
+      font-weight:700;
+      color:#fff;
+      cursor:pointer;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      transition:filter .2s ease,transform .2s ease;
+    }
+    .btn:hover{
+      filter:brightness(1.05);
+      transform:translateY(-2px);
+    }
+    .hero{
+      background:linear-gradient(135deg,var(--primary),var(--secondary));
+      color:#fff;
+      padding:120px 0 60px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+      align-items:center;
+    }
+    .hero-text h1{
+      font-size:2.8rem;
+      margin-bottom:16px;
+      line-height:1.1;
+    }
+    .hero-text p{
+      font-size:1.1rem;
+      margin-bottom:25px;
+      opacity:0.95;
+    }
+    .price-badge{
+      background:#fff;
+      color:#1f2d3a;
+      padding:16px 20px;
+      border-radius:12px;
+      display:inline-block;
+      margin-top:10px;
+      font-weight:600;
+      box-shadow:0 25px 50px rgba(255,255,255,0.2);
+    }
+    .badge-early{
+      background:#f39c12;
+      padding:6px 14px;
+      border-radius:999px;
+      display:inline-block;
+      font-weight:700;
+      margin-bottom:8px;
+      font-size:0.75rem;
+    }
+    .courses{
+      padding:80px 0;
+    }
+    .section-title{
+      font-size:2.3rem;
+      text-align:center;
+      margin-bottom:8px;
+      color:#034bad;
+    }
+    .subtitle{
+      text-align:center;
+      margin-bottom:32px;
+      font-size:1rem;
+      color:#555;
+    }
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:24px;
+      margin-top:30px;
+    }
+    .course-card{
+      background:#fff;
+      border-radius:14px;
+      padding:22px 18px;
+      position:relative;
+      overflow:hidden;
+      box-shadow:0 18px 48px rgba(3,75,173,0.08);
+      transition:transform .25s ease;
+    }
+    .course-card:hover{transform:translateY(-3px);}
+    .card-icon{
+      font-size:32px;
+      margin-bottom:12px;
+    }
+    .curriculum-accordion{
+      margin-top:10px;
+    }
+    .accordion-item{
+      margin-bottom:8px;
+    }
+    .accordion-header{
+      width:100%;
+      background:#f5f8fd;
+      border:none;
+      padding:12px 16px;
+      text-align:left;
+      font-weight:600;
+      cursor:pointer;
+      border-radius:8px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      font-size:0.95rem;
+    }
+    .accordion-body{
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .3s ease;
+      background:#fff;
+      padding:0 16px;
+      font-size:0.9rem;
+    }
+    .accordion-body ul{
+      margin:10px 0;
+      padding-left:18px;
+    }
+    .accordion-item.open .accordion-body{
+      max-height:400px;
+      padding-top:8px;
+      padding-bottom:8px;
+    }
+    .testimonial-section{
+      background:#eef6fc;
+      padding:70px 0;
+    }
+    .testimonials{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:20px;
+    }
+    .testimonial-card{
+      background:#fff;
+      padding:20px 18px;
+      border-radius:14px;
+      box-shadow:0 18px 40px rgba(3,75,173,0.06);
+      position:relative;
+    }
+    .stars{
+      margin-bottom:8px;
+      color:#f1c40f;
+      font-size:0.9rem;
+    }
+    .testimonial-text{
+      font-size:0.9rem;
+      margin:10px 0;
+      color:#2c3e50;
+    }
+    .author{
+      font-weight:600;
+      font-size:0.9rem;
+    }
+    .certificate-section{
+      padding:80px 0;
+      background:#fff;
+    }
+    .certificate-card{
+      display:flex;
+      gap:30px;
+      flex-wrap:wrap;
+      align-items:flex-start;
+      margin-top:30px;
+    }
+    .cert-thumb{
+      flex:1;
+      min-width:260px;
+      max-width:480px;
+    }
+    .cert-info{
+      flex:1;
+      min-width:260px;
+    }
+    .footer{
+      background:#034bad;
+      color:#fff;
+      padding:60px 40px 30px;
+      margin-top:60px;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:30px;
+      margin-bottom:30px;
+    }
+    .footer a{
+      color:rgba(255,255,255,0.85);
+      text-decoration:none;
+      display:block;
+      margin-bottom:8px;
+      font-size:0.85rem;
+    }
+    .footer h4{
+      margin-bottom:14px;
+      font-size:1rem;
+    }
+    .countdown{
+      background:#ffecec;
+      border:1px solid #f5c6cb;
+      padding:14px 18px;
+      border-radius:10px;
+      display:inline-flex;
+      align-items:center;
+      gap:14px;
+      margin-bottom:10px;
+      font-weight:600;
+      color:#1f2d3a;
+    }
+    .timer{
+      font-size:1.4rem;
+      letter-spacing:1px;
+    }
+    @media (max-width:1000px){
+      .hero-grid{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header aria-label="Main navigation">
+    <div class="container header-inner">
+      <div class="logo" aria-label="DoCode Learning logo">
+<!--        <div class="logo-icon" aria-hidden="true">D</div>-->
+        <img src="Docode.png" alt="Docode" width="210" height="70">
+<!--        <div class="logo-text" style="font-size:22px;">DoCode Learning</div>-->
+      </div>
+      <nav aria-label="Primary">
+        <a href="#courses">Courses</a>
+        <a href="#certificate">Certificate</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#about">About</a>
+      </nav>
+      <a href="https://pages.razorpay.com/0118082025" class="btn">Register Now</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" aria-label="Hero section">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <div class="badge-early">Early-bird ends Aug 10, 2025</div>
+          <h1>Launch Your Tech Career in 5 Days</h1>
+          <p>Join DoCode Learning's live, project-first bootcamp. Pick any track: Python, Web Development, or AI/ML. No fluff—just skills you can show employers immediately.</p>
+          <div style="display:flex; gap:16px; flex-wrap:wrap; align-items:center;">
+            <div class="price-badge">
+              ₹349 <span style="text-decoration:line-through; opacity:0.6; margin-left:8px; font-size:0.9rem;">₹999</span>
+              <div style="font-size:0.75rem; margin-top:4px;">Limited seats • Fixed price</div>
+            </div>
+            <a href="https://pages.razorpay.com/0118082025" class="btn">Pay for Python</a>
+          </div>
+          <div class="small">5-day immersive live sessions · Certificate · Community support</div>
+        </div>
+        <div>
+          <div class="course-card" aria-label="Select track and proceed to payment">
+            <h2 style="margin-bottom:10px; color:#034bad;">Reserve & Pay</h2>
+            <p style="margin-bottom:8px; font-weight:600; font-size:1rem; color:#034bad; background:#eef6fc; padding:8px 12px; border-radius:8px;">Choose your bootcamp and continue to secure your early-bird seat.</p>
+            <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:12px;">
+              <a href="https://pages.razorpay.com/0118082025" class="btn" aria-label="Pay for Python Bootcamp">Python ₹349</a>
+<!--              <a href="https://pages.razorpay.com/0118082025" class="btn" aria-label="Pay for Web Development Bootcamp">Web Dev ₹349</a>-->
+<!--              <a href="https://pages.razorpay.com/0118082025" class="btn" aria-label="Pay for AI & ML Bootcamp">AI & ML ₹349</a>-->
+            </div>
+            <div style="margin-top:10px; font-size:0.85rem; color:#1f2d3a; background:#fef7e0; padding:10px 14px; border-radius:8px; border:1px solid #f4d35e;">
+              You will be redirected to payment. 
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:20px;">
+        <div class="countdown" aria-label="Countdown to early bird expiry">
+          <div>Early-bird ends in&nbsp;</div>
+          <div class="timer" id="earlybird-timer">--:--:--</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courses -->
+  <section class="courses" id="courses" aria-label="Course offerings">
+    <div class="container">
+      <div class="section-title">Pick Your Intensive Track</div>
+      <div class="subtitle">5-day live bootcamp. Hands-on projects. Certificate on completion.</div>
+      <div class="cards">
+        <!-- Python -->
+        <div class="course-card" aria-label="Python for ML Bootcamp">
+        <div class="card-icon">📈</div>
+        <h3>Python for Machine Learning</h3>
+        <p>Learn Python data workflows, build ML models, and deploy them. Hands-on exercises with real datasets.</p>
+        <div class="start-tag">
+          <div>Start Date: <span style="color:#10b981;">Aug 18, 2025</span></div>
+        </div>
+        <div class="curriculum-accordion">
+          <div class="accordion-item">
+            <button class="accordion-header">Day 1: Python &amp; Data Handling</button>
+            <div class="accordion-body">
+              <ul>
+                <li>Python basics, NumPy, Pandas</li>
+                <li>Data cleaning &amp; EDA</li>
+                <li>Feature engineering</li>
+              </ul>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">Day 2: Supervised Learning</button>
+            <div class="accordion-body">
+              <ul>
+                <li>Regression &amp; classification</li>
+                <li>Evaluation metrics</li>
+                <li>Train-test split &amp; cross-validation</li>
+              </ul>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">Day 3: Advanced Models</button>
+            <div class="accordion-body">
+              <ul>
+                <li>Tree-based models &amp; KNN</li>
+                <li>Hyperparameter tuning</li>
+                <li>Model comparison</li>
+              </ul>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">Day 4: Inference &amp; API</button>
+            <div class="accordion-body">
+              <ul>
+                <li>Serialize models</li>
+                <li>Wrap in REST endpoint</li>
+                <li>Frontend integration</li>
+              </ul>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">Day 5: Deployment &amp; Capstone</button>
+            <div class="accordion-body">
+              <ul>
+                <li>Deploy ML app</li>
+                <li>End-to-end project</li>
+                <li>Portfolio tips</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:14px;">
+          <a href="https://pages.razorpay.com/0118082025" class="btn" aria-label="Register Python for ML Bootcamp">Register</a>
+          <div class="note">
+            Seats filling fast. Early bird discount applied at checkout.
+          </div>
+        </div>
+      </div>
+        <!-- Web Dev -->
+
+        <!-- AI & ML -->
+        <div class="course-card" aria-label="AI & Machine Learning Bootcamp">
+          <div class="card-icon">🤖</div>
+          <h3>Machine Learning</h3>
+          <p>Understand core ML concepts, build models, and deploy an ML application in 5 days. Practical and career-focused.</p>
+          <div class="start-tag">
+            <div>Start Date: <span style="color:#d9534f;">Coming soon</span></div>
+          </div>
+          <div class="curriculum-accordion">
+          <div class="accordion-item">
+            <button class="accordion-header">Day 1: Intro to AI & ML</button>
+            <div class="accordion-body">
+              <ul>
+                <li>What is AI/ML and real use cases</li>
+                <li>Supervised vs unsupervised learning overview</li>
+                <li>Setting up Python for data workflows</li>
+              </ul>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">Day 2: Python for Data Science</button>
+            <div class="accordion-body">
+              <ul>
+                <li>NumPy and Pandas basics</li>
+                <li>Data cleaning and manipulation</li>
+                <li>Exploratory data analysis</li>
+              </ul>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">Day 3: ML Algorithms</button>
+            <div class="accordion-body">
+              <ul>
+                <li>Regression and classification</li>
+                <li>k-NN, decision trees, SVM overview</li>
+                <li>Model evaluation metrics</li>
+              </ul>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">Day 4: Model Evaluation & Optimization</button>
+            <div class="accordion-body">
+              <ul>
+                <li>Train-test split and cross-validation</li>
+                <li>Hyperparameter tuning</li>
+                <li>Improving model performance</li>
+              </ul>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">Day 5: Deploy Real ML Project</button>
+            <div class="accordion-body">
+              <ul>
+                <li>End-to-end ML model deployment</li>
+                <li>Creating inference pipeline</li>
+                <li>Presentation and next steps</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+          <div style="margin-top:14px;">
+          <a href="https://docs.google.com/forms/d/your-form-id" class="btn" aria-label="Register interest Machine Learning">Register Interest</a>
+          <div class="note">
+            <strong>Fill the form</strong> to get notified as soon as the start date is announced. Limited seats will open first to early registrants.
+          </div>
+        </div>
+        </div>
+
+
+            <div class="course-card" aria-label="Agentic AI Bootcamp">
+        <div class="card-icon">🧩</div>
+        <h3>Agentic AI with Python</h3>
+        <p>Build intelligent, multi-step AI agents using Python and LangChain. Automate tasks, integrate tools, and deploy a real agentic project.</p>
+        <div class="start-tag">
+          <div>Start Date: <span style="color:#d9534f;">Coming soon</span></div>
+        </div>
+        <div class="curriculum-accordion">
+          <div class="accordion-item">
+            <button class="accordion-header">Day 1: Introduction to Agentic AI</button>
+            <div class="accordion-body">
+              <ul>
+                <li>What is agentic AI vs traditional prompts</li>
+                <li>Core concepts: agents, tools, planners, and execution loops</li>
+                <li>Setting up Python environment and LangChain</li>
+              </ul>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">Day 2: Building Intelligent Agents</button>
+            <div class="accordion-body">
+              <ul>
+                <li>Creating agents with LangChain/agent frameworks</li>
+                <li>Tool integration (APIs, web search, file access)</li>
+                <li>Chaining reasoning steps and memory</li>
+              </ul>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">Day 3: Orchestration &amp; Multi-Step Workflows</button>
+            <div class="accordion-body">
+              <ul>
+                <li>Designing task decomposition and planners</li>
+                <li>Error handling, fallback strategies, and tool selection</li>
+                <li>Managing context, state, and iterative refinement</li>
+              </ul>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">Day 4: Evaluation, Safety &amp; Optimization</button>
+            <div class="accordion-body">
+              <ul>
+                <li>Measuring agent performance and reliability</li>
+                <li>Prompt/agent tuning and cost-aware execution</li>
+                <li>Safety guards, rate limiting, and hallucination mitigation</li>
+              </ul>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">Day 5: Deploy Real Agentic AI Project</button>
+            <div class="accordion-body">
+              <ul>
+                <li>End-to-end project (e.g., automated research &amp; reporting agent)</li>
+                <li>Packaging agent as a service with inference API</li>
+                <li>Presentation, next steps, and career tie-ins</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:14px;">
+          <a href="https://docs.google.com/forms/d/your-form-id" class="btn" aria-label="Register interest Agentic AI Bootcamp">Register Interest</a>
+          <div class="note">
+            <strong>Fill the form</strong> to get notified as soon as the start date is announced. Limited seats will open first to early registrants.
+          </div>
+        </div>
+      </div>
+
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Sample Certificate -->
+  <section id="certificate" class="certificate-section" aria-label="Sample certificate">
+    <div class="container">
+      <div class="section-title">Sample Certificate</div>
+      <div class="subtitle">Professional-looking certificate every participant receives</div>
+      <div class="certificate-card">
+        
+<div class="cert-thumb">
+  <div style="border-radius:14px; overflow:hidden; box-shadow:0 25px 60px rgba(3,75,173,0.1);">
+    <iframe src="certificate.pdf" title="Sample Certificate" style="width:100%; height:380px; border:none;" aria-label="Embedded sample certificate PDF">
+      <p>Your browser does not support embedding PDFs. <a href="certificate.pdf" target="_blank">View the certificate here.</a></p>
+    </iframe>
+  </div>
+  <div style="margin-top:12px; display:flex; gap:12px;">
+    <a href="certificate.pdf" class="btn" style="padding:10px 16px; font-size:0.9rem;" download>Download Sample</a>
+    <a href="certificate.pdf" class="btn" style="padding:10px 16px; font-size:0.9rem;" target="_blank">View Larger</a>
+  </div>
+</div>
+
+<!--          <div style="margin-top:12px; display:flex; gap:12px;">-->
+<!--            <a href="certificate.pdf" class="btn" style="padding:10px 16px; font-size:0.9rem;" download>Download Sample</a>-->
+<!--            <a href="certificate.pdf" class="btn" style="padding:10px 16px; font-size:0.9rem;" target="_blank">View Larger</a>-->
+<!--          </div>-->
+        </div>
+        <div class="cert-info">
+          <p style="font-size:1rem; margin-bottom:12px;">
+            Every graduate receives a shareable, branded certificate with their name, course track, completion date, and a unique ID—designed to go on LinkedIn, resumes, or portfolios.
+          </p>
+          <ul style="list-style:disc; padding-left:20px; gap:8px; display:flex; flex-direction:column;">
+            <li>Industry-branded layout</li>
+            <li>Verification code / QR for authenticity</li>
+            <li>Digital + printable PDF</li>
+            <li>Customizable with your name & track</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonial-section" id="testimonials" aria-label="Student testimonials">
+    <div class="container">
+      <div class="section-title">What Past Learners Say</div>
+      <div class="subtitle">Real feedback from recent bootcamp attendees</div>
+      <div class="testimonials">
+        <div class="testimonial-card">
+          <div class="stars" aria-label="5 star rating">★★★★★</div>
+          <div class="testimonial-text">"In just 5 days, I built a full project and added it to my portfolio. The trainer explained concepts clearly and gave practical tips."</div>
+          <div class="author">— Priya, Python Learner</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars" aria-label="5 star rating">★★★★★</div>
+          <div class="testimonial-text">"I had zero background. The Python bootcamp was concise, hands-on, and gave me confidence to start freelancing."</div>
+          <div class="author">— Rahul, Python Enthusiast</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars" aria-label="4.5 star rating">★★★★☆</div>
+          <div class="testimonial-text">"The AI/ML track demystified complex topics. Building a deployable model in day 5 was empowering."</div>
+          <div class="author">— Ananya, AI Learner</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About & Benefits -->
+  <section id="about" aria-label="About DoCode Learning" style="padding:80px 0;">
+    <div class="container">
+      <div class="section-title">Why DoCode Learning?</div>
+      <div class="subtitle">Fast, practical, and supported learning for ambitious coders.</div>
+      <div style="display:flex; gap:40px; flex-wrap:wrap; margin-top:30px;">
+        <div style="flex:1; min-width:250px;">
+          <div style="background:linear-gradient(135deg,var(--primary),var(--secondary)); color:#fff; display:inline-block; padding:10px 16px; border-radius:8px; font-weight:700; margin-bottom:6px; font-size:0.75rem;">Expert Instructors</div>
+          <h3>Learn from Practitioners</h3>
+          <p>Industry professionals teach only what matters—no filler. Get feedback on real work.</p>
+        </div>
+        <div style="flex:1; min-width:250px;">
+          <div style="background:linear-gradient(135deg,var(--primary),var(--secondary)); color:#fff; display:inline-block; padding:10px 16px; border-radius:8px; font-weight:700; margin-bottom:6px; font-size:0.75rem;">Project Focus</div>
+          <h3>Build Real Work</h3>
+          <p>Each track culminates in a portfolio-ready project you can showcase to employers or clients.</p>
+        </div>
+        <div style="flex:1; min-width:250px;">
+          <div style="background:linear-gradient(135deg,var(--primary),var(--secondary)); color:#fff; display:inline-block; padding:10px 16px; border-radius:8px; font-weight:700; margin-bottom:6px; font-size:0.75rem;">Community</div>
+          <h3>Ongoing Support</h3>
+          <p>Access a learner community, ask questions, and get help even after the bootcamp ends.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" aria-label="Footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+<!--            <div class="logo-icon" style="width:28px; height:28px;">D</div>-->
+            <img src="Docode.png" alt="Docode" width="210" height="70">
+<!--            <div style="font-weight:700; font-size:1rem;">DoCode Learning</div>-->
+          </div>
+          <p style="margin-bottom:8px;">5-day bootcamps that move you from zero to portfolio-ready.</p>
+          <div style="font-size:0.65rem; opacity:0.7;">© 2025 DoCode Learning. All rights reserved.</div>
+        </div>
+        <div>
+          <h4>Bootcamps</h4>
+          <a href="#courses">Python</a>
+          <a href="#courses">Machine Learning</a>
+          <a href="#courses">Agentic AI</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="#">About</a>
+          <a href="#">Team</a>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <div style="margin-bottom:6px;">📧 admin@docodetech.in</div>
+          <div style="margin-bottom:6px;">📞 +91 9525814740</div>
+          <div>📍 Bangalore, India</div>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:10px;">
+        <div style="font-size:0.75rem; opacity:0.7;">Powered by DoCode Learning. Designed for clarity and conversion.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Early-bird countdown to Aug 10 2025 23:59 IST
+    function startEarlyBird() {
+      const target = new Date('2025-08-10T18:29:00Z'); // Aug 10 23:59 IST
+      const timerEl = document.getElementById('earlybird-timer');
+      function update() {
+        const now = new Date();
+        let diff = target - now;
+        if (diff < 0) {
+          timerEl.textContent = 'Expired';
+          return;
+        }
+        const hrs = Math.floor(diff / (1000*60*60));
+        const mins = Math.floor((diff % (1000*60*60)) / (1000*60));
+        const secs = Math.floor((diff % (1000*60)) / 1000);
+        timerEl.textContent = String(hrs).padStart(2,'0') + ':' + String(mins).padStart(2,'0') + ':' + String(secs).padStart(2,'0');
+      }
+      update();
+      setInterval(update, 1000);
+    }
+    startEarlyBird();
+
+    // Accordion logic
+    document.querySelectorAll('.accordion-header').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const parent = btn.parentElement;
+        const wasOpen = parent.classList.contains('open');
+        document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('open'));
+        if (!wasOpen) parent.classList.add('open');
+      });
+    });
+  </script>
+</body>
+</html>
