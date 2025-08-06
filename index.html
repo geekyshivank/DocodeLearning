@@ -315,25 +315,54 @@
       }
     }
   </style>
+
+
 </head>
 <body>
   <!-- Header -->
-  <header aria-label="Main navigation">
-    <div class="container header-inner">
-      <div class="logo" aria-label="DoCode Learning logo">
-<!--        <div class="logo-icon" aria-hidden="true">D</div>-->
+ <!-- Include Bootstrap CSS in <head> -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<header aria-label="Main navigation">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container">
+      <!-- Logo -->
+      <a class="navbar-brand d-flex align-items-center" href="#" aria-label="DoCode Learning logo">
         <img src="Docode.png" alt="Docode" width="210" height="70">
-<!--        <div class="logo-text" style="font-size:22px;">DoCode Learning</div>-->
+      </a>
+
+      <!-- Toggler for mobile -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Collapsible content -->
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#courses">Courses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#certificate">Certificate</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#testimonials">Testimonials</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+        </ul>
+        <!-- Button -->
+        <a href="https://pages.razorpay.com/0118082025" class="btn btn-primary ms-lg-3">Register Now</a>
       </div>
-      <nav aria-label="Primary">
-        <a href="#courses">Courses</a>
-        <a href="#certificate">Certificate</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#about">About</a>
-      </nav>
-      <a href="https://pages.razorpay.com/0118082025" class="btn">Register Now</a>
     </div>
-  </header>
+  </nav>
+</header>
+
+<!-- Include Bootstrap JS at end of <body> -->
+
+
 
   <!-- Hero -->
   <section class="hero" aria-label="Hero section">
@@ -753,5 +782,6 @@
       });
     });
   </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
